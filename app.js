@@ -39,15 +39,18 @@ searchButton.on("click", function (){
         .then(function(response) {
             console.log(response);
             let newDiv = $('<div>');
+            let newDiv1 = $('<div>');
+            let newDiv2 = $('<div>');
 
             let lead = response.response.docs[0].lead_paragraph
             let webURL = response.response.docs[0].web_url
             let snippet = response.response.docs[0].snippet
 
-            newDiv.html(JSON.stringify((`<p>${lead}</p>`, `<p>${webURL}</p>`, `<p>${snippet}</p>`));
+            newDiv.text(JSON.stringify(lead));
+            newDiv1.text(JSON.stringify(webURL));
+            newDiv2.text(JSON.stringify(snippet));
             console.log(newDiv)
-            newDiv.append(lead, webURL, snippet);
-            $(".blockquote").append(newDiv);
+            $(".blockquote").append(newDiv, newDiv1, newDiv2);
             
         });
 
