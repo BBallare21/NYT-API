@@ -1,0 +1,30 @@
+body {
+    height: 900px;
+}
+
+.jumbotron {
+    width: 960px;
+    border-radius: 5px;
+    background-color: rgb(5, 5, 82);
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+.card {
+    width: 960px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.fas {
+    margin-right: 3px;
+}
+
+.far {
+    margin-right: 3px;
+}
+
+#card2 {
+    margin-top: 20px;
+}

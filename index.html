@@ -5,14 +5,66 @@
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"/>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-5 text-color-white"><strong><i class="far fa-newspaper"></i>New York Times Search</strong></h1>
+        </div>
+      </div>
 
+      <div class="card">
+        <h5 class="card-header"><i class="fas fa-globe"></i>Search Parameters</h5>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Search Term:</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Number of Records to Retrieve:</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Start Year (Optional):</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">End Year (Optional):</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                  </div>
+              </form>
+              <button type="button" class="btn btn-outline-none"><i class="fas fa-search"></i>Search</button>
+              <button type="button" class="btn btn-outline-none"><i class="far fa-trash-alt"></i>Clear Results</button>
+        </div>
+      </div>
+
+      <div class="card" id="card2">
+        <h5 class="card-header"><i class="fas fa-bars"></i>Top Articles</h5>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0"></blockquote>
+        </div>
+      </div>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
