@@ -1,8 +1,7 @@
 
 
 let APIKey = "Wp72k9jqDxYwJsCX5EHN20YSSpcEdoM0"
-let query = $("#searchTerm").val().trim();
-console.log(query)
+
 //userinput in start year
 let start = $("#startYear").value;
 //user input in end year
@@ -11,7 +10,6 @@ let searchButton = $("#searchButton");
 let clearButton = $("#clearButton");
 
 
-let baseUrl = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${APIKey}`;
 
 
 function buildParameters(start, end) {
@@ -27,6 +25,12 @@ function buildParameters(start, end) {
 
 
 searchButton.on("click", function (){
+    let query = $("#searchTerm").val().trim();
+    
+    console.log(query)
+    let baseUrl = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${APIKey}`;
+
+
     $.ajax({
         url: baseUrl,
         //  + buildParameters(start, end),
@@ -34,8 +38,18 @@ searchButton.on("click", function (){
       })
         .then(function(response) {
             console.log(response);
-            $(".blockquote").append(response);
-    
+            let newDiv = $('<div>');
+
+            let lead = response.response.docs[0].lead_paragraph
+            let webURL = response.response.docs[0].web_url
+            let snippet = response.response.docs[0].snippet
+
+            newDiv.html(JSON.stringify((`<p>${lead}</p>`, `<p>${webURL}</p>`, `<p>${snippet}</p>`));
+            console.log(newDiv)
+            newDiv.append(lead, webURL, snippet);
+            $(".blockquote").append(newDiv);
+            
         });
 
 })
+
