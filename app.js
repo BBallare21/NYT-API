@@ -46,9 +46,9 @@ searchButton.on("click", function (){
             let webURL = response.response.docs[0].web_url
             let snippet = response.response.docs[0].snippet
 
-            newDiv.text(JSON.stringify(lead));
-            newDiv1.text(JSON.stringify(webURL));
-            newDiv2.text(JSON.stringify(snippet));
+            newDiv.html(JSON.stringify(`<p>${lead}</p>`));
+            newDiv1.html(JSON.stringify(`<p>${webURL}</p>`));
+            newDiv2.html(JSON.stringify(`<p>${snippet}</p>`));
             console.log(newDiv)
             $(".blockquote").append(newDiv, newDiv1, newDiv2);
             
